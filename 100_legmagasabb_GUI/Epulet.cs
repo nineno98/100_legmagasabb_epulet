@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _100_legmagasabb_console
+namespace _100_legmagasabb_GUI
 {
     class Epulet
     {

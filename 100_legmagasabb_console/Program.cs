@@ -14,13 +14,62 @@ namespace _100_legmagasabb_console
         {
             
             beolvasas();
-           
-            foreach (var item in epuletek)
-            {
-                Console.WriteLine(item);
-            }
+            feladat01();
+            feladat02();
+            feladat03();
+            feladat04();
+            
 
             Console.ReadKey();
+        }
+
+        private static void feladat04()
+        {
+            int evszam = evszambekeres();
+            Console.WriteLine("Az évszám előtt épült épületek magassága:\n\t"+epuletek.Where(x => x.Epitesi_ev_ < evszam).Sum(y => y.Magassag_));
+        }
+
+        private static int evszambekeres()
+        {
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("Add meg az évszámot:");
+                    int result = int.Parse(Console.ReadLine());
+                    return result;
+                }
+                catch (Exception e)
+                {
+
+                    Console.WriteLine("Egész számot adj meg!");
+                }
+            }
+        }
+
+        private static void feladat03()
+        {
+            Console.WriteLine("3. Feladat");
+        }
+
+        private static void feladat02()
+        {
+
+            Console.WriteLine("2. feladat: " + epuletek.Where(x => !x.Nev_.Contains("Tower")).Count());
+            /*int counter = 0;
+            foreach (var item in epuletek)
+            {
+                if (!item.Nev_.Contains("Tower"))
+                {
+                    counter++;
+                }
+            }
+            Console.WriteLine("2. feladat: "+counter);*/
+        }
+
+        private static void feladat01()
+        {
+            Console.WriteLine("1. Feladat: Épületek száma: "+epuletek.Count);
         }
 
         private static void beolvasas()
