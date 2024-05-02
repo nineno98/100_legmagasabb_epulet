@@ -5,6 +5,7 @@ create table epuletek(\
         magassag double,\
         magassag_ft double,\
         emelet int,\
-        epitesi_ev int\
+        epitesi_ev int,\
+        primary key (nev)\
 \
 ) character set utf8 collate utf8_hungarian_ci;
